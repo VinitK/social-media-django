@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Logged In</title>
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<!-- Full Page Image Header with Vertically Centered Content -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="font-weight-light">Welcome <a href="{% url 'posts:for_user' username=user.username %}">@{{user.username}}</a></h1>
+        <p class="lead">Browse through the groups and participate!</p>
+      </div>
+    </div>
+  </div>
+</header>
+{% endif %}
+{% endblock %}

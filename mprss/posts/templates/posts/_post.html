@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p>{{post.message_html|safe}}</p>
+            <h6 class="media-heading">
+                <time><a href="{% url 'posts:single' username=post.user.username pk=post.pk  %}"></a>{{post.created_at}}</time>
+                <span class="float-right"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{post.user.username}}</a></span>
+            </h6>
+            <div class="media-footer">
+                {% if user.is_authenticated and post.user == user %}
+                <a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-danger"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

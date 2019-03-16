@@ -26,7 +26,8 @@ SECRET_KEY = 'wcrcl6*m(o*f_$f03y!pmo+e94mny$x(rq&q&-=8(ds!v0w!31'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["vinitkk.pythonanywhere.com",
+                 "127.0.0.1"]
 
 
 # Application definition
